@@ -1,0 +1,12 @@
+import numpy as np
+import cv2 as cv
+import matplotlib
+
+path = r'JupyterLab/PHYS 5920 Advanced Lab/test_image.jpg'
+src = cv.imread('JupyterLab/PHYS 5920 Advanced Lab/test_image.jpg')
+window_name = 'image_test'
+
+image = cv.cvtColor(src, cv.COLOR_RGB2HSV)
+cv.imshow(window_name, image_test)
+
+#RGB to HSV conversion, currenlty not working.
