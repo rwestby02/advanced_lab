@@ -1,8 +1,8 @@
 # Advanced Lab lead detection project programming
 ### To do in order:
-##### RGB to HSV
+##### RGB to HSV ✅
 ##### Image input
-##### Image output
+##### Image output ✅
 ##### count yellow
 ##### yellow histogram
 ##### calibration
