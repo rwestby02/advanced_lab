@@ -8,7 +8,8 @@ from skimage import io
 
 #print(image_loc)
 
-image_input = io.imread(r"C:\Users\riley\Downloads\1pixelyellow.jpg")#the letter r ensures that the filepath can be read on windows, using skimage b/c problems with opencv
+image_read = io.imread(r"C:\Users\riley\Downloads\1pixelyellow.jpg")#the letter r ensures that the filepath can be read on windows, using skimage b/c problems with opencv
+image_input = img_as_ubyte(image_read)
 image_hsv = cv.cvtColor(image_input, cv.COLOR_RGB2HSV)#color conversion
 
 lower_bound = np.array([25, 10, 10])#selecting for yellow values, needs refinement. HSV in opencv is 0-179,0-255,0-255   
