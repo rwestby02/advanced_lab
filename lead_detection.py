@@ -2,6 +2,8 @@ import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 from skimage import io
+from skimage.util import img_as_ubyte
+
 
 #print("image filepath")  #trying to ensure that the r to make raw strings is added to an inputted string, windows problem
 #image_loc = input()
