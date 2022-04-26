@@ -10,14 +10,14 @@ image_rgb = cv.cvtColor(image_input, cv.COLOR_BGR2RGB)
 image_hsv = cv.cvtColor(image_input, cv.COLOR_BGR2HSV) #color conversion
 
 
-lower_bound = np.array([88, 50, 20]) #selecting for yellow values, needs refinement. HSV in opencv is 0-179,0-255,0-255. yellow about 85 - 95   
+lower_bound = np.array([88, 40, 25]) #selecting for yellow values, needs refinement. HSV in opencv is 0-179,0-255,0-255. yellow about 85 - 95   
 upper_bound = np.array([97, 254, 254])
 
 mask = cv.inRange(image_hsv, lower_bound, upper_bound) #binary image of pixels with yellow values, black is no yellow, white is yellow
 
 result = cv.bitwise_and(image_rgb, image_rgb, mask = mask) #combines the image with the mask to cut out all the errors from hsv conversion
 
-gray = cv.cvtColor(pregray, cv.COLOR_BGR2GRAY) #makes grayscale image of yellow pixels
+gray = cv.cvtColor(result, cv.COLOR_BGR2GRAY) #makes grayscale image of yellow pixels
 
 yellow_intensity = np.sum(gray) #yellow intensity as measured by amount of yellow, not scaled for image size
 
