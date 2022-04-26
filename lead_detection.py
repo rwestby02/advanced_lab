@@ -17,8 +17,7 @@ mask = cv.inRange(image_hsv, lower_bound, upper_bound) #binary image of pixels w
 
 result = cv.bitwise_and(image_rgb, image_rgb, mask = mask) #combines the image with the mask to cut out all the errors from hsv conversion
 
-pregray = cv.cvtColor(result, cv.COLOR_HSV2RGB) #hsv to gray direct conversion does not exist
-gray = cv.cvtColor(pregray, cv.COLOR_RGB2GRAY) #makes grayscale image of yellow pixels
+gray = cv.cvtColor(pregray, cv.COLOR_BGR2GRAY) #makes grayscale image of yellow pixels
 
 yellow_intensity = np.sum(gray) #yellow intensity as measured by amount of yellow, not scaled for image size
 
